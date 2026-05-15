@@ -49,6 +49,10 @@ Import the generated YAML file into Clash Verge.
 - Local networks → DIRECT
 - Everything else → PROXY
 
+## Disclaimer
+
+Not affiliated with PingVPN. For educational purposes. May violate PingVPN ToS.
+
 ---
 
 ## Русский
@@ -99,3 +103,9 @@ clash_profile_YYYYMMDD_HHMMSS.yaml
 - RU трафик → DIRECT
 - Локальная сеть → DIRECT
 - Остальной трафик → PROXY
+
+## Отказ от ответственности
+
+- Данный скрипт не связан с PingVPN и не аффилирован с ним.
+- Используется только в образовательных целях.
+- Использование скрипта может нарушать условия использования (ToS) сервиса PingVPN.
