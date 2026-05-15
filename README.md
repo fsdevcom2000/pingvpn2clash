@@ -26,7 +26,7 @@ Simple PowerShell script that automatically fetches free proxy servers from Ping
 Run:
 
 ```
-pwsh .\pingvpn_2_clash_verge.ps1
+pingvpn_2_clash_verge.ps1
 ```
 
 The script will generate:
@@ -82,7 +82,7 @@ Not affiliated with PingVPN. For educational purposes. May violate PingVPN ToS.
 Запуск:
 
 ```
-pwsh .\pingvpn_2_clash_verge.ps1
+pingvpn_2_clash_verge.ps1
 ```
 
 После запуска будет создан файл:
