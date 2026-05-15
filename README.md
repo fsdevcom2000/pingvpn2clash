@@ -53,6 +53,8 @@ Import the generated YAML file into Clash Verge.
 
 Not affiliated with PingVPN. For educational purposes. May violate PingVPN ToS.
 
+⭐ Star if useful!
+
 ---
 
 ## Русский
@@ -109,3 +111,5 @@ clash_profile_YYYYMMDD_HHMMSS.yaml
 - Данный скрипт не связан с PingVPN и не аффилирован с ним.
 - Используется только в образовательных целях.
 - Использование скрипта может нарушать условия использования (ToS) сервиса PingVPN.
+
+⭐ Поставьте звезду, если пригодилось!
