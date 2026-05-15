@@ -1,4 +1,12 @@
-#!/usr/bin/env pwsh
+<#
+
+Simple PowerShell script that automatically fetches free proxy servers from PingVPN API and generates a ready-to-use Clash Verge / Mihomo YAML configuration.
+
+Author: fsdevcom2000
+
+Github: https://github.com/fsdevcom2000/pingvpn2clash
+
+#>
 
 function Get-LatestChromeUserAgent {
     try {
