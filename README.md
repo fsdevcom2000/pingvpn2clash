@@ -19,7 +19,6 @@ Simple PowerShell script that automatically fetches free proxy servers from Ping
 ### Requirements
 
 - PowerShell 7+
-- Internet connection
 - Clash Verge Rev or compatible Clash/Mihomo client
 
 ### Usage
@@ -76,7 +75,6 @@ Not affiliated with PingVPN. For educational purposes. May violate PingVPN ToS.
 ### Требования
 
 - PowerShell 7+
-- Доступ в интернет
 - Clash Verge Rev или совместимый Clash/Mihomo клиент
 
 ### Использование
