@@ -49,6 +49,36 @@ function Get-PingVpnProxies {
     return $serversResponse.regions
 }
 
+function Get-CountryByIp($ip) {
+    Write-Host "[DEBUG] GeoIP for $ip" -ForegroundColor DarkYellow
+    try {
+        $url = "http://ip-api.com/json/{0}?fields=status,countryCode,message,query" -f $ip
+        Write-Host "[DEBUG] URL: $url" -ForegroundColor DarkYellow
+
+        $response = Invoke-RestMethod -Uri $url -TimeoutSec 5
+
+        $raw = $response | ConvertTo-Json -Compress
+        Write-Host "[DEBUG] Raw response: $raw" -ForegroundColor DarkYellow
+
+        if ($response.status -eq "success" -and $response.countryCode) {
+            return $response.countryCode.ToUpper()
+        }
+        else {
+            $st = $response.status
+            $msg = $response.message
+            Write-Warning ("GeoIP failed for {0}: status={1} message={2}" -f $ip, $st, $msg)
+        }
+    }
+    catch {
+        $err = $_.Exception.Message
+        Write-Warning ("GeoIP lookup exception for {0}: {1}" -f $ip, $err)
+    }
+
+    return "UNKNOWN"
+}
+
+
+
 function Build-ClashYaml($proxies) {
 
     $yaml = @"
@@ -79,12 +109,25 @@ proxies:
 "@
 
     $names = @()
-    $i = 1
+
+    $countryCounters = @{}
 
     foreach ($p in $proxies) {
 
-        $name = "proxy$i"
+        $country = Get-CountryByIp $p.ip_address
+
+        
+        if ($countryCounters.ContainsKey($country)) {
+            $countryCounters[$country]++
+        }
+        else {
+            $countryCounters[$country] = 1
+        }
+
+        $name = "$country-$($countryCounters[$country])"
         $names += $name
+
+        Write-Host "[+] $($p.ip_address) -> $name" -ForegroundColor DarkGray
 
         $yaml += @"
 
@@ -95,8 +138,6 @@ proxies:
     username: $($p.username)
     password: $($p.password)
 "@
-
-        $i++
     }
 
     $yaml += @"
