@@ -29,7 +29,7 @@ Run:
 pingvpn_2_clash_verge.ps1
 ```
 
-The script will generate:
+The generated YAML configuration file will be saved to your **Downloads** folder with the following naming format:
 
 ```
 clash_profile_YYYYMMDD_HHMMSS.yaml
@@ -85,7 +85,7 @@ Not affiliated with PingVPN. For educational purposes. May violate PingVPN ToS.
 pingvpn_2_clash_verge.ps1
 ```
 
-После запуска будет создан файл:
+Сгенерированный YAML-файл конфигурации сохраняется в вашу папку **Загрузки** в следующем формате:
 
 ```
 clash_profile_YYYYMMDD_HHMMSS.yaml
