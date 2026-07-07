@@ -196,7 +196,13 @@ function Main {
 
     $yaml = Build-ClashYaml $raw
 
-    $file = "clash_profile_$(Get-Date -Format 'yyyyMMdd_HHmmss').yaml"
+    try {
+        $shell = New-Object -ComObject Shell.Application
+        $downloadsPath = $shell.NameSpace('shell:Downloads').Self.Path
+    } catch {
+        $downloadsPath = "$env:USERPROFILE\Downloads"
+    }
+    $file = Join-Path $downloadsPath "clash_profile_$(Get-Date -Format 'yyyyMMdd_HHmmss').yaml"
 
     $yaml | Out-File -FilePath $file -Encoding UTF8
 
