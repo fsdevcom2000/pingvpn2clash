@@ -2,7 +2,7 @@
 
 ## English
 
-!!! PingVPN service is not working, use 1vpn_clash.ps1
+## !!! PingVPN service is not working, use `1vpn_clash.ps1`
 
 Simple PowerShell script that automatically fetches free proxy servers from PingVPN API and generates a ready-to-use Clash Verge / Mihomo YAML configuration.
 
